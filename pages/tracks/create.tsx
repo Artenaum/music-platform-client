@@ -42,16 +42,19 @@ const Create = () => {
                 {activeStep === 0 &&
                 <Grid container direction={"column"} style={{padding: 20}}>
                     <TextField
+						data-testid='create-track-form-field'
                         {...name}
                         style={{marginTop: 10}}
                         label={"Название трека"}
                     />
                     <TextField
+						data-testid='create-track-form-field'
                         {...artist}
                         style={{marginTop: 10}}
                         label={"Имя исполнителя"}
                     />
                     <TextField
+						data-testid='create-track-form-field'
                         {...text}
                         style={{marginTop: 10}}
                         label={"Слова к треку"}
