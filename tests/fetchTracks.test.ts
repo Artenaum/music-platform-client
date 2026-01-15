@@ -2,8 +2,8 @@ import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
-import { fetchTracks } from '../../store/actions-creators/track'
-import { TrackActionTypes } from '../../types/track'
+import { fetchTracks } from '../store/actions-creators/track'
+import { TrackActionTypes } from '../types/track'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
