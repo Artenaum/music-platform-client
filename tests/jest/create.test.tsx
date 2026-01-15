@@ -1,5 +1,5 @@
-import {render, screen} from '@testing-library/react'
-import Create from '../pages/tracks/create'
+import {render} from '@testing-library/react'
+import Create from '../../pages/tracks/create'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import '@testing-library/jest-dom'
