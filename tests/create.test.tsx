@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import {render} from '@testing-library/react'
 import Create from '../pages/tracks/create'
 import { createStore } from 'redux'
@@ -14,10 +14,13 @@ jest.mock('next/router', () => ({
 	})
 }))
 
-jest.mock('../components/Player', () => ({
-  __esModule: true,
-  default: ({ children }) => React.createElement('div', null, children),
-}))
+jest.mock('../components/Player', () => {
+	return {
+		__esModule: true,
+		default: ({children}) => <div>{children}</div>,
+	}
+})
+
 
 
 test('Ensure that create.tsx has 3 <TextField> components and that they have correct labels', () => {

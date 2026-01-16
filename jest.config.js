@@ -1,14 +1,13 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
-  testMatch: [
-	'**/*.test.tsx',
-	'**/*.test.ts'
-  ],
-  moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-  },
-};
+	testEnvironment: 'jest-environment-jsdom',
+	transform: {
+		'^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', {presets: ['next/babel']}]
+	},
+	moduleNameMapper: {
+		'\\.(css|less|sass|scss)$': 'identity-obj-proxy'
+	},
+	testPathIgnorePatterns: [
+		'/node_modules/',
+		'\\.spec\\.(js|ts|jsx|tsx)$'
+	],
+}

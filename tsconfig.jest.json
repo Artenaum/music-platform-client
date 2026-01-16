@@ -1,0 +1,16 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react",
+		"module": "commonjs",
+		"noEmit": false,
+		"isolatedModules": false,
+		"tsBuildInfoFile": "./node_modules/.cache/tsbuild/jest"
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx"
+	]
+}
