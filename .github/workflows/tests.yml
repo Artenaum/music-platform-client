@@ -11,10 +11,8 @@ jobs:
         with:
           node-version: 'v14.21.3'
       - name: Deps
-        run: npm install
-      - name: Start server
-        run: npm run dev
-      - name: Unit tests
+        run: npm ci
+      - name: Start server and perform E2E tests
+        run: npm run server:e2e
+      - name: Perform unit tests
         run: npm run test
-      - name: E2E tests
-        run: npx playwright test
