@@ -67,7 +67,7 @@ const TrackPage = ({serverTrack}) => {
             </Grid>
             <div>
                 {track.comments.map(comment =>
-                    <div>
+                    <div key={comment._id}>
                         <div>Автор - {comment.username}</div>
                         <div>Комментарий - {comment.text}</div>
                     </div>

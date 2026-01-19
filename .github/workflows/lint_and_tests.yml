@@ -1,7 +1,7 @@
-name: Tests
+name: Lint and tests
 on: push
 jobs:
-  run_tests:
+  setup:
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --openssl-legacy-provider
@@ -18,7 +18,21 @@ jobs:
         run: npm install --force @types/react@17.0.1
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Start server and perform E2E tests
-        run: npm run server:e2e
-      - name: Perform unit tests
+  lint:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+        run: npx eslint
+  tests-unit:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unit tests
         run: npm run test
+  tests-e2e:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: E2E tests
+        run: npm run server:e2e

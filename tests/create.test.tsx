@@ -1,4 +1,4 @@
-//import React from 'react'
+import React from 'react'
 import {render} from '@testing-library/react'
 import Create from '../pages/tracks/create'
 import { createStore } from 'redux'
