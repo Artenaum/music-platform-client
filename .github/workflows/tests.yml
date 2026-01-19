@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 'v18.20.8'
       - name: Deps
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Env
         run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Install Playwright Browsers
