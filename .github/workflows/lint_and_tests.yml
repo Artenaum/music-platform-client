@@ -1,19 +1,13 @@
 name: Lint and tests
 on: push
 jobs:
-  setup:
+  lint:
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --openssl-legacy-provider
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: --openssl-legacy-provider
-    steps:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -25,11 +19,12 @@ jobs:
       - name: Lint
         run: npx eslint
   tests-unit:
-    needs: setup
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --openssl-legacy-provider
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -41,11 +36,12 @@ jobs:
       - name: Unit tests
         run: npm run test
   tests-e2e:
-    needs: setup
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --openssl-legacy-provider
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
