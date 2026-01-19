@@ -8,14 +8,14 @@
     "start": "next start",
     "test": "jest",
     "test:e2e": "playwright test",
-    "server:e2e": "start-server-and-test dev http://localhost:3000 test:e2e"
+    "server:e2e": "start-server-and-test dev http://127.0.0.1:3000 test:e2e"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@material-ui/core": "^5.0.0-alpha.24",
     "@material-ui/icons": "^4.11.2",
-    "@playwright/test": "^1.40.0",
+    "@playwright/test": "^1.57.0",
     "@types/react-redux": "^7.1.16",
     "axios": "^0.21.1",
     "next": "10.0.6",
