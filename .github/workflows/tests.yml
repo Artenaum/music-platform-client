@@ -9,9 +9,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'v14.21.3'
+          node-version: 'v18.20.8'
       - name: Deps
-        run: npm install
+        run: npm ci
       - name: Env
         run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Install Playwright Browsers
