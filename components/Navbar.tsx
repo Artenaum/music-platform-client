@@ -23,6 +23,7 @@ const menuItems = [
     {text: 'Главная', href: '/'},
     {text: 'Список треков', href: '/tracks'},
     {text: 'Список альбомов', href: '/albums'},
+	{text: 'GraphQL', href: '/graphql'}
 ]
 
 export default function Navbar() {
